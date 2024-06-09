@@ -1,4 +1,8 @@
 import * as L from "leaflet";
+/**
+ * @exports L.Control.Search
+ * @exports L.control.search
+ */
 
 declare module "leaflet" {
   namespace Control {
@@ -243,9 +247,12 @@ declare module "leaflet" {
        */
       layer: Layer;
     }
-
-    namespace control {
-      function search(options?: SearchConstuctorOptions): Search;
-    }
+  }
+  namespace control {
+    /**
+     * creates a new search control
+     * @param options
+     */
+    function search(options?: Control.SearchConstuctorOptions): Control.Search;
   }
 }

@@ -4,6 +4,12 @@ huge thanks to [@bastisk](https://github.com/bastisk) for the initial typings, b
 
 will publish to DefinitelyTyped if this is useful to anyone.
 
+## installation
+
+```sh
+npm install --save=dev leaflet-search-types
+```
+
 ```typescript
 import * as L from "leaflet";
 /**

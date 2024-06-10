@@ -10,7 +10,9 @@ declare module "leaflet" {
       constructor(options?: SearchConstuctorOptions);
       /**
        * event listener
-       * @param layer
+       * @param type event type
+       * @param fn callback function
+       * @param context
        */
       on(
         type: string | "search:collapsed" | "search:expanded" | "search:cancel",

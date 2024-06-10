@@ -1,6 +1,6 @@
 {
     "name": "leaflet-search-types",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "TypeScript definitions for leaflet-search",
     "homepage": "https://github.com/johan-cho/leaflet-search-types",
     "license": "MIT",
@@ -10,7 +10,6 @@
             "url": "https://github.com/johan-cho"
         }
     ],
-    "main": "",
     "types": "index.d.ts",
     "repository": {
         "type": "git",
@@ -22,9 +21,6 @@
     },
     "devDependencies": {
         "leaflet-search": "^4.0.0"
-    },
-    "directories": {
-        "test": "tests"
     },
     "keywords": [
         "leaflet-search",

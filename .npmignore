@@ -1,4 +1,6 @@
-/tests/
+tests/
 tsconfig.json
 package-lock.json
 .gitignore
+.github/
+node_modules/

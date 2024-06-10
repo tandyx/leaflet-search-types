@@ -7,7 +7,6 @@
     "contributors": [
         {
             "name": "Johan Cho",
-            "githubUsername": "johan-cho",
             "url": "https://github.com/johan-cho"
         }
     ],
@@ -15,11 +14,25 @@
     "types": "index.d.ts",
     "repository": {
         "type": "git",
-        "url": "https://github.com/johan-cho/leaflet-search-types.git"
+        "url": "git+https://github.com/johan-cho/leaflet-search-types.git"
     },
     "scripts": {},
     "dependencies": {
         "@types/leaflet": "^1.9.12",
-        "leaflet-search": "^4.0.0"
+        "leaflet-search": "^4.0.0",
+        "leaflet-search-types": "^0.0.1"
+    },
+    "directories": {
+        "test": "tests"
+    },
+    "keywords": [
+        "leaflet-search",
+        "types",
+        "typed",
+        "leaflet"
+    ],
+    "author": "johan cho",
+    "bugs": {
+        "url": "https://github.com/johan-cho/leaflet-search-types/issues"
     }
 }

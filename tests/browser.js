@@ -1,5 +1,5 @@
 /**
- * @typedef {import('leaflet-search')}
+ * @typedef {import('leaflet-search-types')}
  * @typedef {import('leaflet')}
  */
 

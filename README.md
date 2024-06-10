@@ -7,8 +7,21 @@ will publish to DefinitelyTyped if this is useful to anyone.
 ## installation
 
 ```sh
-npm install --save=dev leaflet-search-types
+npm install --save-dev leaflet-search-types
 ```
+
+## usage
+
+you could add these lines to the top of your js file.
+
+```js
+/**
+ * @typedef {import('leaflet-search-types')}
+ * @typedef {import('leaflet')}
+ */
+```
+
+## content
 
 ```typescript
 import * as L from "leaflet";

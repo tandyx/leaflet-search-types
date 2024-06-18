@@ -54,9 +54,10 @@ declare module "leaflet" {
     interface SearchConstuctorOptions {
       /**
        * url for search by ajax request, ex: `"search.php?q={s}"`. Can be function to returns string for dynamic parameter setting
+       * @param text searching text
        * @default ""
        */
-      url?: string;
+      url?: string | ((text: string) => string);
       /**
        * layer where search markers (is a `L.LayerGroup`)
        * @default null
@@ -65,10 +66,12 @@ declare module "leaflet" {
       /**
        * function to fill `_recordsCache`, passed searching text by first param and callback in second
        * @param text searching text
-       * @param callback
        * @default null
        */
-      sourceData?: (text: string, callback: (...args: any[]) => any) => any;
+      sourceData?: (
+        text: string,
+        callback: (data: Object | any[]) => any
+      ) => Object;
       /**
        * jsonp param name for search by jsonp service, ex: `"callback"`
        * @default null
@@ -88,22 +91,24 @@ declare module "leaflet" {
        * callback for reformat all data from source to indexed data object
        * @default null
        */
-      formatData?: (...args: any[]) => any;
+      formatData?: (json: Object | any[]) => any;
       /**
        * callback for filtering data from text searched, params: `textSearch`, `allRecords`
+       * @param textSearch searching text
+       * @param allRecords fron `this._recordsCache`
        * @default null
        */
-      filterData?: (textSearch: string, allRecords: any) => any;
+      filterData?: (textSearch: string, allRecords: Object) => any;
       /**
        * callback run on location found, params: latlng, title, map
        * @default null
        */
-      moveToLocation?: (...args: any[]) => any;
+      moveToLocation?: (latlng: L.LatLng, title: string, map: L.Map) => void;
       /**
-       * function to return row tip html node(or html string), receive text tooltip in first param
+       * function to return row tip html node (or html string), receive text tooltip in first param
        * @default null
        */
-      buildTip?: (...args: any[]) => HTMLElement | any;
+      buildTip?: (text: string, val: any) => HTMLElement | string | any;
       /**
        * container id to insert Search Control
        * @default ""
@@ -203,7 +208,7 @@ declare module "leaflet" {
        * custom L.Marker or false for hide
        * @default { icon: false, animate: true, circle: { radius: 10, weight: 3, color: '#e03', stroke: true, fill: false } }
        */
-      marker?: SearchMarkerConstructorOptions;
+      marker?: SearchMarkerConstructorOptions | Marker | CircleMarker;
     }
 
     /**
@@ -224,7 +229,7 @@ declare module "leaflet" {
        * draw a circle in location found
        * @default CircleMarker.options
        */
-      circle?: Circle;
+      circle?: CircleMarkerOptions;
     }
 
     /**

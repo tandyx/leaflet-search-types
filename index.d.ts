@@ -9,27 +9,6 @@ declare module "leaflet" {
     class Search extends Control {
       constructor(options?: SearchConstuctorOptions);
       /**
-       * event listener
-       * @param layer
-       */
-      on(
-        type: string | "search:collapsed" | "search:expanded" | "search:cancel",
-        fn: (e: SearchEvent) => any,
-        context?: any
-      ): this;
-
-      /**
-       * event listener
-       * @param type "search:locationfound"
-       * @param fn  callback function
-       * @param context
-       */
-      on(
-        type: "search:locationfound",
-        fn: (e: SearchEventFound) => any,
-        context?: any
-      ): this;
-      /**
        * set layer search at runtime
        * @param layer layer search
        */
@@ -202,6 +181,77 @@ declare module "leaflet" {
        * @default { icon: false, animate: true, circle: { radius: 10, weight: 3, color: '#e03', stroke: true, fill: false } }
        */
       marker?: SearchMarkerConstructorOptions;
+    }
+
+    interface Evented {
+      on(
+        type: string | "search:collapsed" | "search:expanded" | "search:cancel",
+        fn: (e: SearchEvent) => any,
+        context?: any
+      ): this;
+      on(
+        type: "search:locationfound",
+        fn: (e: SearchEventFound) => any,
+        context?: any
+      ): this;
+
+      off(
+        type: string | "search:collapsed" | "search:expanded" | "search:cancel",
+        fn?: (e: SearchEvent) => any,
+        context?: any
+      ): this;
+      off(
+        type: "search:locationfound",
+        fn?: (e: SearchEventFound) => any,
+        context?: any
+      ): this;
+
+      once(
+        type: string | "search:collapsed" | "search:expanded" | "search:cancel",
+        fn: (e: SearchEvent) => any,
+        context?: any
+      ): this;
+      once(
+        type: "search:locationfound",
+        fn: (e: SearchEventFound) => any,
+        context?: any
+      ): this;
+
+      addEventListener(
+        type: string | "search:collapsed" | "search:expanded" | "search:cancel",
+        fn: (e: SearchEvent) => any,
+        context?: any
+      ): this;
+
+      addEventListener(
+        type: "search:locationfound",
+        fn: (e: SearchEventFound) => any,
+        context?: any
+      ): this;
+
+      removeEventListener(
+        type: string | "search:collapsed" | "search:expanded" | "search:cancel",
+        fn?: (e: SearchEvent) => any,
+        context?: any
+      ): this;
+
+      removeEventListener(
+        type: "search:locationfound",
+        fn?: (e: SearchEventFound) => any,
+        context?: any
+      ): this;
+
+      addOneTimeEventListener(
+        type: string | "search:collapsed" | "search:expanded" | "search:cancel",
+        fn: (e: SearchEvent) => any,
+        context?: any
+      ): this;
+
+      addOneTimeEventListener(
+        type: "search:locationfound",
+        fn: (e: SearchEventFound) => any,
+        context?: any
+      ): this;
     }
 
     /**

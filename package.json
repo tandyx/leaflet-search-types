@@ -1,6 +1,6 @@
 {
     "name": "leaflet-search-types",
-    "version": "0.0.8",
+    "version": "0.0.11",
     "types": "index.d.ts",
     "description": "TypeScript definitions for leaflet-search",
     "homepage": "https://github.com/johan-cho/leaflet-search-types",

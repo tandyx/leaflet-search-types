@@ -7,6 +7,8 @@ import * as L from "leaflet";
 declare module "leaflet" {
   namespace Control {
     class Search extends Control {
+      options?: SearchConstuctorOptions;
+
       constructor(options?: SearchConstuctorOptions);
       /**
        * event listener
